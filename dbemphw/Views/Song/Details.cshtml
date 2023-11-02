@@ -1,0 +1,50 @@
+﻿@model dbemphw.Models.Song
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>歌曲明細</h2>
+
+<dl class="dl-horizontal">
+    <hr />
+    <dt>@Html.DisplayNameFor(m => m.sId)</dt>
+    <dd>@Html.DisplayFor(m => m.sId)</dd>
+    <dt>@Html.DisplayNameFor(m => m.sName)</dt>
+    <dd>@Html.DisplayFor(m => m.sName)</dd>
+    <dt>@Html.DisplayNameFor(m => m.sComposer)</dt>
+    <dd>@Html.DisplayFor(m => m.sComposer)</dd>
+    <dt>@Html.DisplayNameFor(m => m.sLyricist)</dt>
+    <dd>@Html.DisplayFor(m => m.sLyricist)</dd>
+    <dt>@Html.DisplayNameFor(m => m.sLyrics)</dt>
+    <dd>@Html.DisplayFor(m => m.sLyrics)</dd>
+    <dt>@Html.DisplayNameFor(m => m.sMv)</dt>
+    <dd>@Html.DisplayFor(m => m.sMv)</dd>
+</dl>
+<p>
+    @Html.ActionLink("返回列表", "Song", null, new { @class = "btn btn-warning" })
+</p>
+
+@section topCSS{
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+}

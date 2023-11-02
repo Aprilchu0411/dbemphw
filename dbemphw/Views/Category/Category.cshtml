@@ -1,0 +1,74 @@
+﻿@model IEnumerable<dbemphw.Models.Category>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>歌曲類型</h2>
+
+<h3 style="text-align:right">
+    @Html.ActionLink("新增類型", "CreateCategory", null, new { @class = "btn btn-warning" })
+</h3>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cDesc)
+            </th>
+            <th>異動</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cDesc)
+            </td>
+            <td>
+                <a href="@Url.Action("DetailsCategory","Category")?id=@item.cId" class="btn btn-info">明細</a><br />
+                <a href="@Url.Action("EditCategory","Category")?id=@item.cId" class="btn btn-primary">編輯</a><br />
+                <a href="@Url.Action("DeleteCategory","Category")?id=@item.cId" class="btn btn-danger"
+                   onclick="return confirm('確定要刪除 @item.cId 這個類型資訊嗎');">刪除</a>
+        </tr>
+    }
+
+</table>
+
+
+@section topCSS{
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+}
+
+

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<dbemphw.Models.Album>
+
+@{
+    ViewBag.Title = "Album";
+}
+
+<h2>專輯</h2>
+
+
+<h3 style="text-align:right">
+    @Html.ActionLink("新增專輯", "CreateAlbum", null, new { @class = "btn btn-warning" })
+</h3>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.aId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aTurnoner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zId)
+            </th>
+            <th>異動</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.aId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aTurnoner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zId)
+            </td>
+            <td>
+                <a href="@Url.Action("DetailAlbum","Album")?aId=@item.aId" class="btn btn-primary">詳細資訊</a>
+                <a href="@Url.Action("EditAlbum","Album")?aId=@item.aId" class="btn btn-info">編輯資訊</a>
+                <a href="@Url.Action("DeleteAlbum","Album")?id=@item.aId" class="btn btn-danger"
+                   onclick="return confirm('確定要刪除 @item.aId 這個專輯資訊嗎');">刪除</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@section topCSS{
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+}
+

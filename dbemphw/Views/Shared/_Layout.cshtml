@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("topCSS", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切換導覽" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav ">
+                    <li><a href="http://localhost:57940/index/index" target=_self>首頁</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="http://localhost:57940/Category/Category" target=_self>歌曲類型</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="http://localhost:57940/Singer/Singer" target=_self>歌手</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="http://localhost:57940/Song/Song" target=_self>歌曲</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="http://localhost:57940/Album/Album" target=_self>專輯</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="http://localhost:57940/Billboard/Billboard" target=_self>排行榜</a></li>&nbsp;&nbsp;&nbsp;
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

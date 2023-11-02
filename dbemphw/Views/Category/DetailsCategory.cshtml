@@ -1,0 +1,64 @@
+﻿@model dbemphw.Models.Category
+
+@{
+    ViewBag.Title = "DetailsCategory";
+}
+
+<h2>類型明細</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cDesc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("返回列表", "Category", null, new { @class = "btn btn-warning" })
+</p>
+
+@section topCSS{
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+}

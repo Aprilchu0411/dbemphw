@@ -1,0 +1,93 @@
+﻿@model IEnumerable<dbemphw.Models.Song>
+
+@{
+    ViewBag.Title = "Song";
+}
+
+<h2>歌曲</h2>
+
+<h3 style="text-align:right">
+    @Html.ActionLink("新增歌曲", "CreateSong", null, new { @class = "btn btn-warning" })
+</h3>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sComposer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sLyricist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sLyrics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sMv)
+            </th>
+            <th>異動</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sComposer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sLyricist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sLyrics)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sMv)
+                </td>
+                <td>
+                    <a href="@Url.Action("Details","Song")?id=@item.sId" class="btn btn-info">明細</a>
+                    <a href="@Url.Action("Edit","Song")?id=@item.sId" class="btn btn-primary">編輯</a>
+                    <a href="@Url.Action("Delete","Song")?id=@item.sId" class="btn btn-danger"
+                       onclick="return confirm('確定要刪除 @item.sName 這個歌曲資訊嗎');">刪除</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section topCSS{
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+}
+
